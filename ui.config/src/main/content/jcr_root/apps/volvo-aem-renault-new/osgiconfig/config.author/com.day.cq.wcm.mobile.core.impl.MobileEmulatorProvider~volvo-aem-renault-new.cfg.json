@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "volvo-aem-renault-new/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

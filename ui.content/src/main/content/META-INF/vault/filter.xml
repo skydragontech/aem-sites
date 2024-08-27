@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/volvo-aem-renault-new" mode="merge"/>
+    <filter root="/content/volvo-aem-renault-new" mode="merge"/>
+    <filter root="/content/dam/volvo-aem-renault-new" mode="merge">
+        <exclude pattern="/content/dam/volvo-aem-renault-new(/.*)?"/>
+        <include pattern="/content/dam/volvo-aem-renault-new/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/volvo-aem-renault-new/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/volvo-aem-renault-new" mode="merge"/>
+</workspaceFilter>

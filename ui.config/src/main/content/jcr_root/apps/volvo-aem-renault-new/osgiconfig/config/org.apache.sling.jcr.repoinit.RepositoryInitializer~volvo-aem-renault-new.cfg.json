@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/volvo-aem-renault-new",
+        "create path (nt:unstructured) /content/dam/volvo-aem-renault-new/jcr:content",
+        "set properties on /content/dam/volvo-aem-renault-new/jcr:content\n  set cq:conf{String} to /conf/volvo-aem-renault-new\n  set jcr:title{String} to \"volvo-aem-react-renault-new\"\nend"
+    ]
+}

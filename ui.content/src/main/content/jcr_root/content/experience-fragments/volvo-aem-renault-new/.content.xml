@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:adobeTargetExportFormat="html"
+    cq:allowedTemplates="[/conf/volvo-aem-renault-new/settings/wcm/templates/(?!page-).*]"
+    cq:conf="/conf/volvo-aem-renault-new"
+    jcr:primaryType="sling:OrderedFolder"
+    jcr:title="volvo-aem-react-renault-new Fragments"
+    sling:configRef="/conf/volvo-aem-renault-new">
+    <language-masters/>
+    <us/>
+</jcr:root>

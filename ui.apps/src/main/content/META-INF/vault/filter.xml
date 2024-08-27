@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/volvo-aem-renault-new/clientlibs"/>
+    <filter root="/apps/volvo-aem-renault-new/components"/>
+    <filter root="/apps/volvo-aem-renault-new/i18n"/>
+    <filter root="/apps/sling" />
+    <filter root="/apps/msm/volvo-aem-renault-new_blueprint" mode="merge"/>
+</workspaceFilter>
