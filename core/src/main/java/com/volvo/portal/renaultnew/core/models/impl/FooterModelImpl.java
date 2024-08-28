@@ -6,8 +6,10 @@ import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.LayoutContainer;
 import com.drew.lang.annotations.NotNull;
 import com.volvo.portal.renaultnew.core.models.FooterModel;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.*;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
@@ -30,16 +32,48 @@ public class FooterModelImpl implements FooterModel {
     private SlingHttpServletRequest request;
 
     @ValueMapValue
-    @Default(values = "--50")
+    @Default(values = "1")
     private String columnLayout;
+
+    @ValueMapValue
+    private String copyright;
+
+    @ChildResource(name = "firstLinks")
+    private Collection<FooterItemModel> firstLinks;
+
+    @ChildResource(name = "secondLinks")
+    private List<FooterItemModel> secondLinks;
+
+    @ChildResource(name = "thirdLinks")
+    private List<FooterItemModel> thirdLinks;
 
     @Self
     @Via(type = ResourceSuperType.class)
     private LayoutContainer layoutContainer;
 
     @Override
+    public String getCopyright() {
+        return StringUtils.isBlank(copyright) ? FooterModel.super.getCopyright() : copyright;
+    }
+
+    @Override
     public String getColumnLayout() {
         return columnLayout;
+    }
+
+    @Override
+    public Collection<FooterItemModel> getFirstLinks() {
+        return firstLinks;
+    }
+
+    @Override
+    public Collection<FooterItemModel> getSecondLinks() {
+        return secondLinks;
+    }
+
+    @Override
+    public List<FooterItemModel> getThirdLinks() {
+        return thirdLinks;
     }
 
     @Override
