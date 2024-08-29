@@ -38,6 +38,9 @@ public class FooterModelImpl implements FooterModel {
     @ValueMapValue
     private String copyright;
 
+    @ValueMapValue
+    private Collection<String> socialIcons;
+
     @ChildResource(name = "firstLinks")
     private Collection<FooterItemModel> firstLinks;
 
@@ -59,6 +62,12 @@ public class FooterModelImpl implements FooterModel {
     @Override
     public String getColumnLayout() {
         return columnLayout;
+    }
+
+
+    @Override
+    public Collection<String> getSocialIcons() {
+        return socialIcons;
     }
 
     @Override

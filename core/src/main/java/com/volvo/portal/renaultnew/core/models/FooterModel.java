@@ -16,6 +16,10 @@ public interface FooterModel extends ContainerExporter {
         return "copyright " + Calendar.getInstance().get(Calendar.YEAR) + " Renault Trucks";
     }
 
+    default Collection<String> getSocialIcons() {
+        return new ArrayList<>();
+    }
+
     default Collection<FooterItemModel> getFirstLinks() {
         return new ArrayList<>();
     }
