@@ -168,7 +168,6 @@ class Footer extends Container<ColumnControlProps, CoreContainerState> {
     }
 
     render() {
-        console.log(this.props)
         const isEmpty = FooterConfig.isEmpty(this.props);
 
         return (

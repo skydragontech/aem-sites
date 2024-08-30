@@ -17,9 +17,10 @@ const MegaMenuNavConfig = {
  * Text React component
  */
 class MegaMenuNav extends Component {
-    handleEventClick(){
+    handleEventClick() {
 
     };
+
     get preHeader() {
         return <>
             <div className="preheader">
@@ -27,11 +28,13 @@ class MegaMenuNav extends Component {
                     <div id="block-welcometext"
                          className="block block-fixed-block-content block-fixed-block-contentwelcome-text">
                         <div className="content">
-                            <div className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                            <div
+                                className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                 <p>Welcome to&nbsp;Renault Trucks UK</p></div>
                         </div>
                     </div>
-                    <div id="block-linktoallourwebsitespage" className="block block-fixed-block-content block-fixed-block-contentlink-to-all-our-websites-page">
+                    <div id="block-linktoallourwebsitespage"
+                         className="block block-fixed-block-content block-fixed-block-contentlink-to-all-our-websites-page">
                         <div className="content">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g fill="none" fillRule="evenodd">
@@ -44,23 +47,28 @@ class MegaMenuNav extends Component {
                                     </g>
                                 </g>
                             </svg>
-                            <div className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                <p><a href="https://www.renault-trucks.com" rel=" noopener" target="_blank">Our websites</a></p></div>
+                            <div
+                                className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                                <p><a href="https://www.renault-trucks.com" rel=" noopener" target="_blank">Our
+                                    websites</a></p></div>
                         </div>
                     </div>
-                    <div id="block-linktocontactmenu" className="block block-fixed-block-content block-fixed-block-contentlink-to-contact-menu">
+                    <div id="block-linktocontactmenu"
+                         className="block block-fixed-block-content block-fixed-block-contentlink-to-contact-menu">
                         <button className="contact-us-btn global-link collapsed" type="button"
                                 ref="#block-contact-us" aria-expanded="false" aria-haspopup="true">
                             Open contact menu
                             <div className="content">
-                                <div className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                                <div
+                                    className="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                     <p><a href="#">Contact</a></p></div>
                             </div>
                         </button>
                     </div>
                     <div id="block-searchblock" className="block block-rt-search-bar block-rt-search-block">
                         <div className="content">
-                            <button id="searchTrigger" className="btn trigger-search" type="button" aria-expanded="false" aria-controls="searchCollapse">
+                            <button id="searchTrigger" className="btn trigger-search" type="button"
+                                    aria-expanded="false" aria-controls="searchCollapse">
                                 <div className="opener">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -88,13 +96,13 @@ class MegaMenuNav extends Component {
                                 </div>
                             </button>
                             <div className="form collapse" id="searchCollapse">
-                                <form className="rt-search-form"  action="/" id="rt-search-form" acceptCharset="UTF-8">
+                                <form className="rt-search-form" action="/" id="rt-search-form" acceptCharset="UTF-8">
                                     <fieldset
                                         className="js-form-item js-form-type-textfield form-type-textfield js-form-item-search form-item-search form-group">
                                         <label htmlFor="edit-search" className="js-form-required form-required">Looking
                                             for a specific content ?</label>
                                         <input placeholder="Search" type="text"
-                                               id="edit-search" name="search"  size="60" maxLength="128"
+                                               id="edit-search" name="search" size="60" maxLength="128"
                                                className="required form-control" required="required"
                                                aria-required="true"/>
                                     </fieldset>
@@ -171,9 +179,10 @@ class MegaMenuNav extends Component {
                     <div id="block-primary" className="block block-we-megamenu block-we-megamenu-blockprimary">
                         <div className="content">
                             <div className="region-we-mega-menu">
-                                <nav onClick={this.handleEventClick} className="primary navbar navbar-default navbar-we-mega-menu mobile-collapse">
+                                <nav onClick={this.handleEventClick}
+                                     className="primary navbar navbar-default navbar-we-mega-menu mobile-collapse">
                                     <div className="container-fluid">
-                                         {MegaMenuItemTemplate(this.props)}
+                                        {MegaMenuItemTemplate(this.props)}
                                     </div>
                                     <div id="block-searchblock"
                                          className="block block-rt-search-bar block-rt-search-block">
@@ -265,7 +274,7 @@ class MegaMenuNav extends Component {
     }
 
     render() {
-        return <div style={{height:'126px'}}>
+        return <div style={{height: '126px'}}>
             {this.preHeader}
             {this.navigation}
         </div>;
