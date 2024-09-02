@@ -301,6 +301,8 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Social"
                             sling:resourceType="granite/ui/components/coral/foundation/container"
+                            granite:height="{Long}1024"
+                            granite:class="height600"
                             margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured"
                                sling:hideChildren="[layout,backgroundColor,backgroundColorSwatchesOnly,backgroundImageAsset,id,accessibilityLabel,roleAttribute]">
