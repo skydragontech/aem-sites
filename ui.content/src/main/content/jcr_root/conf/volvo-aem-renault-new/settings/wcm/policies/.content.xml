@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -34,11 +34,11 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
-                    enableAssetDelivery="true"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
+                    enableAssetDelivery="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
@@ -342,8 +342,8 @@
                 <policy_spa
                     jcr:primaryType="nt:unstructured"
                     jcr:title="volvo-aem-react-renault-new SPA Page Policy"
-                    clientlibs="[volvo-aem-renault-new.react]"
-                    sling:resourceType="wcm/core/components/policy/policy">
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[volvo-aem-renault-new.react]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_spa>
             </page>
@@ -354,8 +354,7 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[volvo-aem-renault-new.react]"
                     isRoot="{Boolean}true"
-                    structureDepth="3"
-                />
+                    structureDepth="3"/>
             </spa>
         </components>
     </volvo-aem-renault-new>
@@ -363,15 +362,27 @@
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
-                        <spa-default
+                    <spa-default
                         jcr:description="Includes only SPA-Enabled components."
+                        jcr:lastModified="{Date}2024-09-02T15:37:23.564+08:00"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="SPA Content"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[group:volvo-aem-react-renault-new - Content]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </spa-default>
-            
+                    <policy_1725262344841
+                        cq:styleDefaultClasses="node node--type-homepage node--view-mode-full ds-1col clearfix"
+                        jcr:description="make content middle"
+                        jcr:lastModified="{Date}2024-09-02T15:37:31.274+08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Renault Content Page"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:volvo-aem-react-renault-new - Content,group:volvo-aem-react-renault-new - Structure]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1725262344841>
                 </responsivegrid>
             </components>
         </foundation>

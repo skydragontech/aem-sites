@@ -21,6 +21,8 @@ import './ExperienceFragment/ExperienceFragment';
 import './Banner/Banner'
 import './Renault/Sturcture/MegaMenuNav/MegaMenuNav'
 import './Renault/Sturcture/Footer'
+import './Renault/Content/Title'
+import './Renault/Content/NewsList'
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 
