@@ -19,6 +19,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.volvo.portal.renaultnew.core.models.NewsList;
 import lombok.Data;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -30,9 +31,11 @@ import org.apache.sling.jcr.resource.api.JcrResourceConstants;
 import org.apache.sling.models.annotations.*;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.via.ResourceSuperType;
 
 import javax.jcr.Session;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -62,6 +65,9 @@ public class NewsListImpl implements NewsList {
 
     private java.util.List imageListItems;
 
+    @ValueMapValue
+    private String newsTitle;
+
     @Override
     public Collection<NewsItem> getNews() {
         if (imageListItems == null) {
@@ -79,6 +85,10 @@ public class NewsListImpl implements NewsList {
         return ImmutableList.copyOf(imageListItems);
     }
 
+    public String getNewsTitle() {
+        return newsTitle == null ? null : newsTitle.trim();
+    }
+
     @Override
     public Collection<ListItem> getListItems() {
         return coreList.getListItems();
@@ -86,9 +96,13 @@ public class NewsListImpl implements NewsList {
 
     public class NewsItem implements ListItem {
         private static final String IMAGE_RESOURCE_TYPE = "volvo-aem-renault-new/components/image";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM. dd yyyy", Locale.ENGLISH);
         final PageManager pageManager;
         private final Page page;
+        @Getter
         private final String linkUrl;
+        @Getter
+        private final String modifyDate;
         private final Resource image;
         private final ListItem wrappedListItem;
 
@@ -102,14 +116,11 @@ public class NewsListImpl implements NewsList {
                     .orElse(null);
             this.wrappedListItem = wrappedListItem;
             this.linkUrl = Objects.requireNonNull(wrappedListItem.getLink()).getURL();
+            this.modifyDate = simpleDateFormat.format(Objects.requireNonNull(wrappedListItem.getLastModified()).getTime());
         }
 
         public boolean isEmpty() {
             return getImage() == null;
-        }
-
-        public String getLinkUrl() {
-            return linkUrl;
         }
 
         public final Resource getImage() {

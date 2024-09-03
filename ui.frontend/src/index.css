@@ -29425,25 +29425,6 @@ html[dir=rtl] .favorite-dealer-preview .open-status:before {
     margin-bottom: 3.5rem;
 }
 
-.paragraph.full-title .component-title:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -2rem;
-    -webkit-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    display: inline-block;
-    background: url(assets/icons/separator-arrow.svg);
-    -webkit-background-size: contain;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    width: 13rem;
-    height: 1rem;
-}
-
 .paragraph.full-title .component-title + .field--name-field-text {
     text-align: center;
 }

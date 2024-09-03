@@ -67,6 +67,17 @@ class Footer extends Container<ColumnControlProps, CoreContainerState> {
      */
     configuredColumns() {
         const numOfColumnsToRender: number = Number(this.props.columnLayout);
+        let outputLiList: any[] = [];
+        [...this.props.socialIcons].map((socialItem, index) => {
+            // @ts-ignore
+            const iconData = (this.iconMaps)[socialItem];
+            outputLiList.push(<li className={"nav-item"} key={index + 'item'}>
+                <a href={iconData.url} className={'nav-link'}>
+                    {iconData.icon}
+                </a>
+            </li>)
+            outputLiList.push(<li className={`separator`} key={index + 'separator'}></li>)
+        });
         return (<div className={"container-fluid"}>
                 <section className={"region region-footer-first col-sm-12 col-md-2"}>
                     <div className={`block block-fixed-block-content block-fixed-block-contentfooter-logo`}>
@@ -89,18 +100,7 @@ class Footer extends Container<ColumnControlProps, CoreContainerState> {
                         <ul className={"navbar-footer"}>
                             {this.renderFirstNColumns(numOfColumnsToRender)}
                             {this.props.socialIcons && <ul className={`clearfix nav social-menu col-sm-12 col-md-5`}>
-                                {[...this.props.socialIcons].map((socialItem, index) => {
-                                    // @ts-ignore
-                                    const iconData = (this.iconMaps)[socialItem];
-                                    return (<>
-                                        <li className={"nav-item"}>
-                                            <a href={iconData.url} className={'nav-link'}>
-                                                {iconData.icon}
-                                            </a>
-                                        </li>
-                                        <li className={`separator`}></li>
-                                    </>)
-                                })}
+                                {outputLiList}
                             </ul>}
                             <div className="block-contact-us-button">
                                 <a className="contact-link"
@@ -110,12 +110,12 @@ class Footer extends Container<ColumnControlProps, CoreContainerState> {
                                     <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path className="stroke" d="M6.7998 19.6914L16.1498 10.3499L6.7998 0.999904"
-                                              stroke="white" stroke-width="1.5"></path>
+                                              stroke="white" strokeWidth="1.5"></path>
                                         <path className="stroke" d="M3.9865 17.7959L9.945 11.8544L-2.59711e-07 11.8544"
-                                              stroke="white" stroke-width="1.5"></path>
+                                              stroke="white" strokeWidth="1.5"></path>
                                         <path className="stroke" d="M0 8.86255L9.962 8.86255L3.9865 2.90405"
                                               stroke="white"
-                                              stroke-width="1.5"></path>
+                                              strokeWidth="1.5"></path>
                                     </svg>
                                 </div>
                             </div>

@@ -43,13 +43,13 @@ class Banner extends Component {
                                                         <path className="stroke"
                                                               d="M6.7998 19.6914L16.1498 10.3499L6.7998 0.999904"
                                                               stroke="white"
-                                                              stroke-width="1.5"></path>
+                                                              strokeWidth="1.5"></path>
                                                         <path className="stroke"
                                                               d="M3.9865 17.7959L9.945 11.8544L-2.59711e-07 11.8544"
-                                                              stroke="white" stroke-width="1.5"></path>
+                                                              stroke="white" strokeWidth="1.5"></path>
                                                         <path className="stroke"
                                                               d="M0 8.86255L9.962 8.86255L3.9865 2.90405"
-                                                              stroke="white" stroke-width="1.5"></path>
+                                                              stroke="white" strokeWidth="1.5"></path>
                                                     </svg>
                                                 </div>
                                             </div>
