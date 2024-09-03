@@ -18,11 +18,11 @@ import withAsyncImport from "../utils/withAsyncImport";
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
-import './Banner/Banner'
 import './Renault/Sturcture/MegaMenuNav/MegaMenuNav'
 import './Renault/Sturcture/Footer'
 import './Renault/Content/Title'
 import './Renault/Content/NewsList'
+import './Renault/Content/Banner'
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 

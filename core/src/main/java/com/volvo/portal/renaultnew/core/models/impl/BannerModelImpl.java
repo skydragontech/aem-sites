@@ -3,6 +3,7 @@ package com.volvo.portal.renaultnew.core.models.impl;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.models.Image;
+import com.adobe.cq.wcm.core.components.models.Page;
 import com.drew.lang.annotations.NotNull;
 import com.volvo.portal.renaultnew.core.models.BannerModel;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -16,7 +17,7 @@ import org.apache.sling.models.annotations.via.ResourceSuperType;
 
 @Model(
         adaptables = SlingHttpServletRequest.class,
-        adapters = { BannerModel.class, ComponentExporter.class},
+        adapters = {BannerModel.class, ComponentExporter.class},
         resourceType = BannerModelImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
@@ -24,7 +25,7 @@ import org.apache.sling.models.annotations.via.ResourceSuperType;
 public class BannerModelImpl implements BannerModel {
 
     // points to the the component resource path in ui.apps
-    static final String RESOURCE_TYPE = "volvo-aem-renault-new/components/banner";
+    static final String RESOURCE_TYPE = "volvo-aem-renault-new/components/renault/content/banner";
 
     @Self
     private SlingHttpServletRequest request;
@@ -40,12 +41,27 @@ public class BannerModelImpl implements BannerModel {
     @ValueMapValue
     private String bannerText;
 
+    @ValueMapValue
+    private String bannerTitle;
+
+    @ValueMapValue
+    private String bannerLink;
+
     // public getter to expose the value of `bannerText` via the Sling Model and JSON output
     @Override
     public String getBannerText() {
         return bannerText;
     }
 
+    @Override
+    public String getBannerTitle() {
+        return bannerTitle;
+    }
+
+    @Override
+    public String getBannerLink() {
+        return bannerLink;
+    }
     // Re-use the Image class for all other methods:
 
     @Override

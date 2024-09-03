@@ -71,7 +71,6 @@ class NewsList extends Component {
 
     render() {
         const isEmpty = NewsListConfig.isEmpty(this.props);
-        console.log(this.props)
         return (
             <>{!isEmpty && this.wrapper(this.props)}</>
         );
