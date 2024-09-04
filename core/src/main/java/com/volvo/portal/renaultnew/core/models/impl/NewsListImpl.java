@@ -13,6 +13,7 @@ import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.eval.JcrPropertyPredicateEvaluator;
 import com.day.cq.search.eval.PathPredicateEvaluator;
 import com.day.cq.search.eval.TypePredicateEvaluator;
+import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.google.common.collect.ImmutableList;
@@ -135,6 +136,10 @@ public class NewsListImpl implements NewsList {
         @Override
         public String getDescription() {
             return this.page.getProperties().get("shortDescription", this.page.getDescription());
+        }
+
+        public Collection<String> getTags() {
+            return this.page.getTags() == null ? null : Arrays.stream(this.page.getTags()).map(Tag::getName).collect(Collectors.toCollection(LinkedHashSet::new));
         }
     }
 
